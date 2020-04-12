@@ -1,10 +1,11 @@
 void main(){
   //final es que la variable no va a cambiar su valor 
-  final wolverine =  new Heroe('Logan', 'Regeneracion');
+  final wolverine =  new Heroe(
+    poder: 'Regeneracion',
+    nombre: 'Logan'
+  );
 
   print( wolverine );
-  print( wolverine.poder );
-  print( wolverine.nombre );
 
 }
 
@@ -12,12 +13,16 @@ class Heroe{
   String nombre;
   String poder;
 
-  Heroe(String nombre, String poder){
-    this.nombre = nombre;
-    this.poder = poder;
-  }
+  // Heroe(String nombre, String poder){
+  //   this.nombre = nombre;
+  //   this.poder = poder;
+  // }
+  Heroe({ this.nombre, this.poder });
 
-  String toString(){
-    return '${this.nombre} - ${this.poder}';
-  }
+  // String toString(){
+  //   return 'nombre: $nombre - poder: $poder';
+  // }
+
+  String toString() => 'nombre: $nombre - poder: $poder';
+
 }
